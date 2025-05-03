@@ -4,6 +4,8 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import CVDownload from "./components/CVDownload";
+import LampComponent from "./components/LampComponent";
+
 import "./App.css";
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <About />
+      <LampComponent/>
       <Projects />
       <CVDownload />
       <Contact />

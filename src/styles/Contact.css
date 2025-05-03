@@ -1,5 +1,5 @@
 #contact {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
+  background: linear-gradient(145deg, #0f172a, #1e293b);
   color: #f1f5f9;
   padding: 80px 20px;
   text-align: center;
@@ -8,9 +8,11 @@
 }
 
 #contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-size: 2.7rem;
+  margin-bottom: 50px;
   color: #60a5fa;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
 }
 
 .contact-info {
@@ -21,24 +23,30 @@
 }
 
 .contact-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(96, 165, 250, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 25px 30px;
+  border-radius: 20px;
   display: flex;
   gap: 20px;
   align-items: center;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  border-color: #60a5fa;
 }
 
 .contact-item h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #60a5fa;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .contact-item a {
@@ -53,6 +61,7 @@
 }
 
 .contact-item svg {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #60a5fa;
+  flex-shrink: 0;
 }

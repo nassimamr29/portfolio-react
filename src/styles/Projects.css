@@ -196,8 +196,3 @@
   right: -40px;
 }
 
-.image-container .prev-btn:hover,
-.image-container .next-btn:hover {
-  background-color: #38bdf8;
-  transform: scale(1.1);
-}

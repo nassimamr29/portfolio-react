@@ -1,48 +1,76 @@
-#about {
+.about {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding: 60px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-  border-radius: 24px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 100px 10%;
+  background-color: #0f0f1c;
+  color: white;
+  min-height: 100vh;
 }
 
-#about:hover {
-  transform: scale(1.025);
-}
-
-#about img {
-  max-width: 200px;
-  border-radius: 50%;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.5s ease;
-}
-
-#about img:hover {
-  transform: rotate(6deg) scale(1.12);
-}
-
-#about div {
+.about-text {
   flex: 1;
-  transition: opacity 0.4s ease-in-out;
+  max-width: 600px;
 }
 
-#about:hover div {
+.about-text h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.about-text .dot {
+  color: #8a63d2;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #cfd2dc;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  width: 90%;
+  max-width: 500px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7)) brightness(0.95) contrast(1.1);
+  border-radius: 20px;
+  transform: scale(1);
+  transition: all 0.4s ease;
+  animation: float 5s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.85)) brightness(1) contrast(1.2);
   opacity: 1;
 }
 
-#about p {
-  line-height: 1.8;
-  font-size: 1.25rem;
-  color: #e2e8f0;
-  transition: color 0.3s ease-in-out;
-  max-width: 700px;
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
-#about:hover p {
-  color: #f8fafc;
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-top: 40px;
+  }
+
+  .about-text h1 {
+    font-size: 3rem;
+  }
 }
+

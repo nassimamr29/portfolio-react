@@ -1,0 +1,136 @@
+/* -------- BACKGROUND BODY DYNAMIQUE -------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(#0a0a0a, #000000);
+  color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 1s ease;
+  overflow-x: hidden;
+}
+
+body.light-background {
+  background: linear-gradient(to bottom, #fffbe6, #ffecd2);
+  color: #333;
+}
+
+/* -------- SECTION STYLE -------- */
+.lamp-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* -------- TITRE -------- */
+.lamp-title {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-bottom: 60px;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* -------- CONTAINER LAMPE -------- */
+.lamp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* -------- AMPOULE -------- */
+.lamp {
+  width: 80px;
+  height: 120px;
+  background: #222;
+  border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+  position: relative;
+  transition: background-color 0.4s ease;
+  box-shadow: 0 0 20px #000;
+  z-index: 2;
+}
+
+.lamp.on {
+  background: #fff176;
+  box-shadow: 0 0 60px 30px rgba(255, 241, 118, 0.4);
+}
+
+.glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffde7 0%, transparent 70%);
+  opacity: 0.5;
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+/* -------- FIL -------- */
+.rope {
+  position: relative;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-top: -20px;
+  z-index: 1;
+}
+
+.cord {
+  width: 4px;
+  height: 100%;
+  background-color: #888;
+  transition: transform 0.3s ease;
+}
+
+.knot {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  margin-top: 10px;
+  box-shadow: 0 0 10px red;
+}
+
+/* Animation lors du tirage */
+.pulling .cord {
+  transform: translateY(10px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .lamp-title {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+}
+/* -------- FOND ÉTOILÉ ANIMÉ -------- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  animation: starsMove 60s linear infinite;
+  z-index: 0;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@keyframes starsMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
