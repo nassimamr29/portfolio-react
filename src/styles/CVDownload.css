@@ -1,8 +1,10 @@
 #cv-download {
-  text-align: center;
-  padding: 60px 20px;
   background: linear-gradient(145deg, #0f172a, #1e293b);
   color: #f1f5f9;
+  padding: 80px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 .cv-card {

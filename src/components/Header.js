@@ -9,6 +9,7 @@ function Header() {
         <ul className="nav-links">
           <li><a href="#about">À propos</a></li>
           <li><a href="#projects">Projets</a></li>
+          <li><a href="#recommendation-section">Recommandations</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>

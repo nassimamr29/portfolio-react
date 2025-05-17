@@ -1,0 +1,252 @@
+#recommendation {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+  padding: 80px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+#recommendation h2 {
+  font-size: 2.7rem;
+  color: #60a5fa;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+h2{font-size: 1.7rem;
+  color: #60a5fa;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  letter-spacing: 1px;}
+.recommendation-form {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recommendation-form input,
+.recommendation-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(96, 165, 250, 0.3);
+  border-radius: 15px;
+  padding: 15px 20px;
+  color: #f1f5f9;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-form input::placeholder,
+.recommendation-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.recommendation-form input:focus,
+.recommendation-form textarea:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.recommendation-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.recommendation-form button {
+  background-color: #60a5fa;
+  color: #0f172a;
+  border: none;
+  padding: 14px 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recommendation-form button:hover {
+  background-color: #3b82f6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.4);
+}
+
+.recommendation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+}
+
+.recommendation-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(96, 165, 250, 0.3);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.recommendation-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  border-color: #60a5fa;
+}
+
+.recommendation-item h3 {
+  color: #60a5fa;
+  margin-bottom: 5px;
+}
+
+.recommendation-item p {
+  margin: 5px 0;
+  line-height: 1.4;
+  color: #cbd5e1;
+}
+
+.recommendation-item a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3b82f6;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.recommendation-item a:hover {
+  color: #60a5fa;
+}
+
+.delete-btn {
+  margin-top: 15px;
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.admin-access input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(96, 165, 250, 0.3);
+  border-radius: 15px;
+  padding: 10px 15px;
+  color: #f1f5f9;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.admin-access input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+#recommendation-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #ffffff;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.recommendation-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.recommendation-form input,
+.recommendation-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+.recommendation-form input::placeholder,
+.recommendation-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.recommendation-form input:focus,
+.recommendation-form textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b82f688;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.recommendation-form button {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 12px;
+}
+
+.recommendation-form button:hover {
+  background: #2563eb;
+}
+
+.recommendation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.recommendation-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.recommendation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.recommendation-card a {
+  color: #60a5fa;
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.recommendation-card strong {
+  color: #93c5fd;
+}
