@@ -3,6 +3,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 body {
+  transition: background 0.7s cubic-bezier(.6,2,.7,.7);
+}
+body.light-background {
+  background: linear-gradient(135deg, #fffbe6, #ffe8d6) !important;
+  color: #22223b;
+}
+.light-mode {
+  color: #22223b !important;
+}
+.night-mode {
+  color: #f1f5f9 !important;
+}
+
+.toggle-light-btn {
+  position: fixed;
+  top: 28px;
+  right: 32px;
+  z-index: 2000;
+  background: linear-gradient(110deg, #fffbe6 70%, #ffe8d6 100%);
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px #0002;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.night-mode .toggle-light-btn {
+  background: linear-gradient(135deg, #0f172a 90%, #1e293b 100%);
+  color: #ffe8d6;
+  box-shadow: 0 8px 24px #3b82f633;
+}
+
+/* Pop-up blague */
+.joke-pop {
+  position: fixed;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffe8d6;
+  color: #6d28d9;
+  padding: 20px 44px;
+  border-radius: 28px;
+  font-size: 1.22rem;
+  font-weight: bold;
+  box-shadow: 0 4px 26px #8a63d244;
+  z-index: 9999;
+  animation: popin 0.3s, fadeout 2.1s 0.7s forwards;
+}
+@keyframes popin {
+  from { opacity: 0; transform: translateX(-50%) scale(0.7);}
+  to   { opacity: 1; transform: translateX(-50%) scale(1);}
+}
+@keyframes fadeout {
+  to { opacity: 0; transform: translateX(-50%) scale(1.05);}
+}
+
+/* Optionnel : tu peux personnaliser le style des sections en mode clair : */
+body.light-background section,
+body.light-background #about,
+body.light-background #contact,
+body.light-background .card-3d {
+  background: rgba(255,255,255,0.95) !important;
+  color: #22223b !important;
+}
+
+body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -125,7 +197,6 @@ nav ul li a:hover {
   padding: 70px 40px;
   text-align: center;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(20px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -235,4 +306,73 @@ body.light-background {
   background-color: #527b90; /* Couleur claire premium */
   /* Tu peux aussi utiliser un dégradé si tu veux un effet WOW */
   /* background: linear-gradient(to bottom, #fffbe6, #ffe8d6); */
+}
+/* === 3D Card Effect === */
+.card-3d {
+  background: rgba(30,41,59,0.75);
+  border-radius: 24px;
+  box-shadow: 0 15px 60px 0 rgba(16, 35, 82, 0.32), 0 1.5px 10px 0 rgba(60,130,246,0.15);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  transition:
+    transform 0.3s cubic-bezier(.5,2.5,.7,.7),
+    box-shadow 0.3s cubic-bezier(.5,2.5,.7,.7);
+  will-change: transform;
+  perspective: 900px;
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+}
+.card-3d:hover {
+  transform: rotateY(7deg) scale(1.04) translateY(-8px) skewX(1deg);
+  box-shadow: 0 24px 70px 0 rgba(59, 130, 246, 0.35), 0 3px 15px 0 rgba(59, 130, 246, 0.09);
+}
+
+/* 3D Button effect */
+.btn-3d {
+  background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 14px;
+  padding: 14px 34px;
+  border: none;
+  box-shadow: 0 6px 24px 0 rgba(59, 130, 246, 0.26), 0 1.5px 4px 0 rgba(94, 234, 212, 0.08);
+  transform: perspective(350px) translateZ(0px);
+  transition: transform 0.18s cubic-bezier(.43,2.6,.7,.7), box-shadow 0.18s;
+  cursor: pointer;
+}
+.btn-3d:hover {
+  transform: perspective(350px) translateZ(14px) scale(1.07);
+  box-shadow: 0 18px 40px 0 rgba(59, 130, 246, 0.45);
+}
+
+/* Parallax Background */
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background-attachment: fixed;
+  /* Ajoute un léger parallax sur le scroll */
+}
+body::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: 150vw;
+  height: 150vh;
+  left: -25vw;
+  top: -25vh;
+  background: radial-gradient(circle at 60% 40%, #3b82f688 0, transparent 70%), 
+              radial-gradient(circle at 80% 70%, #6366f155 0, transparent 65%);
+  filter: blur(50px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .card-3d {
+    border-radius: 14px;
+    padding: 24px 8px;
+  }
+  .btn-3d {
+    font-size: 0.98rem;
+    padding: 12px 18px;
+  }
 }

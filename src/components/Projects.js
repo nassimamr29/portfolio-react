@@ -15,8 +15,8 @@ function Projects() {
     },
     {
       title: "2048",
-      description: "2048 est un jeu de réflexion captivant réalisé en HTML, CSS et JavaScript. Glissez les tuiles avec les flèches du clavier pour fusionner les nombres identiques et atteindre 2048 ! Suivez votre score en temps réel, profitez d'animations fluides et testez votre logique dans ce défi addictif 🚀🎮",
-      stack: ["Python", "Pandas", "Matplotlib"],
+      description: "2048 est un jeu de réflexion captivant réalisé en HTML, CSS et JavaScript. Glissez les tuiles avec les flèches du clavier pour fusionner les nombres identiques et atteindre 2048 ! Suivez votre score en temps réel 🚀🎮",
+      stack: ["HTML", "CSS", "JavaScript"],
       link: "https://github.com/ton-projet2",
       images: ["/Capture d’écran du 2025-05-01 18-31-38.png", "/Capture d’écran du 2025-05-01 18-32-06.png" ,"Capture d’écran du 2025-05-01 18-31-28.png" ]
     },
