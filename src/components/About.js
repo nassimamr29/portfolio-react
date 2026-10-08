@@ -1,52 +1,25 @@
-import React, { useRef } from "react";
-import "../styles/About.css";
+import React from 'react';
+import { ArrowUpRight, GraduationCap, MapPin, CalendarDays } from 'lucide-react';
 
-const About = () => {
-  // Ajout du ref pour la perspective 3D
-  const cardRef = useRef(null);
-
-  // Effet 3D à la souris
-  const handleMouseMove = (e) => {
-    const card = cardRef.current;
-    const { left, top, width, height } = card.getBoundingClientRect();
-    const x = e.clientX - left - width / 2;
-    const y = e.clientY - top - height / 2;
-    const rotateX = (y / height) * 16; // Plus le nombre est grand, plus ça tourne
-    const rotateY = (x / width) * -16;
-    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-  };
-
-  const resetTransform = () => {
-    cardRef.current.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
-  };
-
+export default function About() {
   return (
-    <section
-      className="about-3d card-3d"
-      id="about"
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={resetTransform}
-    >
-      <div className="about-text">
-        <h1>
-          Welcome<span className="dot">.</span>
-        </h1>
-        <p>
-          Étudiant en informatique passionné par la Data, l’IA, les systèmes et les technologies cloud. J’aime transformer des données en solutions concrètes. À l’aise avec les environnements Linux, j’ai également des bases solides en administration systèmes et réseaux.
-          <br />
-          <br />
-          Curieux, rigoureux et proactif, j'ai développé aussi des projets avec (Python, Java, C, JavaScript, HTML, CSS) et je maîtrise les outils de versioning (GitHub, GitLab). J’attache une grande importance au travail en équipe, à l’analyse et à l’adaptabilité face aux défis techniques.
-        </p>
-      </div>
-      <div className="about-image">
-        <img
-          src="/Capture d’écran du 2025-05-03 18-08-10.png"
-          alt="Coding illustration"
-        />
+    <section className="section about-section" id="about" aria-labelledby="about-title">
+      <div className="layout about-layout">
+        <div>
+          <div className="section-eyebrow"><span>01</span> / À PROPOS</div>
+          <h2 className="section-title" id="about-title"> Développement, systèmes et infrastructure : <span>trois domaines</span>  au cœur de mon parcours. </h2>
+        </div>
+        <div className="about-right">
+          <p>Mon parcours en informatique m’amène à explorer le développement logiciel, les systèmes et les réseaux. En Master P2S, j’approfondis notamment les enjeux de sûreté, de sécurité et de systèmes distribués.</p>
+          <p>En parallèle, je développe mes compétences pratiques sur Linux, la virtualisation et l’automatisation avec des projets autour de <strong>Docker, Vagrant et Ansible</strong>. Mon objectif : apprendre à construire des environnements compréhensibles, reproductibles et fiables.</p>
+          <div className="about-facts">
+            <div><GraduationCap size={19}/><span><small>FORMATION</small>Master Informatique · P2S</span></div>
+            <div><MapPin size={19}/><span><small>LOCALISATION</small>Île-de-France, France</span></div>
+            <div><CalendarDays size={19}/><span><small>DISPONIBILITÉ</small>Dès mars 2027 · 5 à 6 mois</span></div>
+          </div>
+          <a className="text-link" href="#journey">Découvrir mon parcours <ArrowUpRight size={16}/></a>
+        </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

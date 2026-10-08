@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Portfolio — Nassim AMROUCHE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio professionnel construit en **React**, pensé pour un profil Master 2 Informatique (P2S) orienté systèmes, DevOps, Cloud et sécurité.
 
-## Available Scripts
+## Démarrer en local
 
-In the project directory, you can run:
+Prérequis : Node.js récent (20 ou 22 recommandé) et npm.
 
-### `npm start`
+```bash
+npm ci
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Le site s'ouvre sur `http://localhost:3000`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Pour produire les fichiers à déployer :
 
-### `npm test`
+```bash
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sur Vercel : framework **Create React App**, build command `npm run build`, output directory `build`. Le site est entièrement statique : aucune clé API ni backend requis.
 
-### `npm run build`
+## Personnalisation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **`src/data.js`** : nom, email, GitLab, LinkedIn, spécialisation, technologies, projets et URL du CV.
+- **`src/components/`** : composants React (Accueil, Profil, Compétences, Projets, Parcours, Contact).
+- **`src/App.css`** : palette, typographie, mise en page responsive, animations et états.
+- **`public/images/`** : images compressées au format WebP.
+- **`public/index.html`** : titre et métadonnées de référencement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Ajouter ton CV récent
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Les deux PDF d'alternance 2025 présents dans le ZIP d'origine ont été **supprimés**, car ils ne correspondent plus au Master 2 P2S / stage 2027.
 
-### `npm run eject`
+1. Placer ton CV à jour dans `public/CV_Nassim_AMROUCHE_2027.pdf`.
+2. Ouvrir `src/data.js`.
+3. Modifier `cvUrl: ''` en `cvUrl: '/CV_Nassim_AMROUCHE_2027.pdf'`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Le site affichera alors **Télécharger mon CV**, sans aucune URL cassée. En attendant, il affiche **Demander mon CV** (email de contact).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Vérifier / publier les dépôts des projets
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `MegaFlix` conserve son lien de dépôt GitHub déjà présent dans le portfolio original.
+- Le projet **Infrastructure virtualisée avec Ansible** et le projet **API REST conteneurisée** proviennent des éléments de parcours déjà communiqués ; leurs URLs de dépôt ne sont pas publiques/confirmées. Le code laisse donc `link: ''` sans inventer de lien.
+- Les cartes `ChatBot` et `2048` ont été retirées à la demande, ainsi que leurs images inutilisées.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Lorsque les dépôts sont accessibles, renseigner le champ `link` de chaque projet dans `src/data.js`. Le lien de profil GitLab est `https://gitlab.sorbonne-paris-nord.fr/12208737/mongit` et le lien LinkedIn est `https://www.linkedin.com/in/nassim-amrouche0/`. Ils sont cliquables via les icônes / liens du site. Si le dépôt GitLab est privé, certains visiteurs devront se connecter pour le consulter. Mettre à jour les descriptions si les détails réels diffèrent des résumés.
 
-## Learn More
+### 3. Affiner tes compétences
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Les technologies sont présentées par catégorie, avec les niveaux "notions", "initiation" ou "formation" indiqués quand nécessaire. Vérifier leur formulation avant publication.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Principaux changements
 
-### Code Splitting
+- Identité visuelle sobre, sombre, avec touches terminal/devtools.
+- Navigation adaptée aux smartphones.
+- Accueil explicite sur le stage de mars 2027.
+- Sections structurées pour la lecture par des recruteurs.
+- Pages projet en fenêtres accessibles (Échap, focus, navigation clavier) avec galerie.
+- Suppression de la photo contenant des métadonnées GPS et des anciens CV.
+- Compression de captures d'écran en WebP.
+- Suppression des références HTML aux fichiers locaux.
+- SEO de base, libellés accessibles et prise en charge de `prefers-reduced-motion`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## À noter
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Le projet reste sur **Create React App** pour conserver la compatibilité avec le projet fourni sans effectuer de migration risquée pendant la refonte. Une migration ultérieure vers Vite pourra être faite séparément. Le verrouillage des dépendances (`package-lock.json`) provient de la version originale.

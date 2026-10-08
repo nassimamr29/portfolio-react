@@ -1,43 +1,38 @@
-import React, { useRef } from "react";
-import "../styles/Header.css";
+import React, { useEffect, useState } from 'react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 
-function Header() {
-  const headerRef = useRef(null);
+const links = [
+  { href: '#about', label: 'À propos' },
+  { href: '#skills', label: 'Compétences' },
+  { href: '#projects', label: 'Projets' },
+  { href: '#journey', label: 'Parcours' },
+];
 
-  // Effet 3D à la souris sur le header
-  const handleMouseMove = (e) => {
-    const card = headerRef.current;
-    const { left, top, width, height } = card.getBoundingClientRect();
-    const x = e.clientX - left - width / 2;
-    const y = e.clientY - top - height / 2;
-    const rotateX = (y / height) * 12;
-    const rotateY = (x / width) * -12;
-    card.style.transform = `perspective(1300px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-  };
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
-  const resetTransform = () => {
-    headerRef.current.style.transform =
-      "perspective(1300px) rotateX(0deg) rotateY(0deg) scale(1)";
-  };
+  useEffect(() => {
+    const closeOnEsc = (event) => { if (event.key === 'Escape') setOpen(false); };
+    window.addEventListener('keydown', closeOnEsc);
+    return () => window.removeEventListener('keydown', closeOnEsc);
+  }, []);
 
   return (
-    <header
-      className="header-3d"
-      ref={headerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={resetTransform}
-    >
-      <div className="logo-3d">Nassim&nbsp;AMROUCHE</div>
-      <nav>
-        <ul className="nav-links-3d">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#cv-download">Mon CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <header className="site-header">
+      <div className="header-inner layout">
+        <a href="#top" className="brand" aria-label="Nassim Amrouche, retour en haut" onClick={() => setOpen(false)}>
+          <span className="brand-mark">N<span>.</span></span>
+          <span className="brand-name">NASSIM<span> / </span>AMROUCHE</span>
+        </a>
+        <nav id="main-navigation" className={`navigation${open ? ' navigation--open' : ''}`} aria-label="Navigation principale">
+          {links.map((link) => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>)}
+          <a className="nav-mobile-contact" href="#contact" onClick={() => setOpen(false)}>Contact <ArrowUpRight size={16} /></a>
+        </nav>
+        <a className="header-contact" href="#contact">Me contacter <ArrowUpRight size={15} /></a>
+        <button className="menu-toggle" type="button" aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-controls="main-navigation" aria-expanded={open} onClick={() => setOpen(prev => !prev)}>
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
     </header>
   );
 }
-
-export default Header;
